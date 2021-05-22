@@ -1,38 +1,88 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #999;
 }
-
-.App-link {
-  color: #61dafb;
+.App nav {
+  background-color: rgb(42, 43, 75);
+  width: 100%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.item {
+  display: grid;
+  grid-template: 2fr 3fr 3fr / 3fr 1fr;
+  padding: 1em;
+  background-color: #f5f5f5;
+}
+.item button.delete {
+  grid-row: 1;
+  grid-column: 2;
+  margin-left: auto;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 1.5em;
+  height: 1.5em;
+  padding: initial;
+}
+.item .titleWrap {
+  grid-row: 2;
+  grid-column: 1 / end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2em;
+  text-align: center;
+  gap: 1em;
+}
+.item .textWrap {
+  grid-row: 3;
+  grid-column: 1 / end;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 2em;
+  text-align: justify;
+  gap: 1em;
+}
+.item .titleWrap > button.btn,
+.item .textWrap > button.btn {
+  font-size: 0.7em;
+  border-radius: 15px;
+  background-color: #ccc;
+  border: initial;
+  outline: initial;
+}
+.list > button.btn {
+  border-radius: 0 0 0.25rem 0.25rem;
+}
+.list .item:not(:last-of-type) {
+  border-bottom: 1px solid #ccc;
+}
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding: 3em;
+  color: #aaa;
+  text-align: center;
+}
+.empty-state div:first-child {
+  font-size: 2em;
+}
+.empty-state div:last-child {
+  font-size: 1.5em;
+}
+.emoji {
+  font-size: 3em;
 }
